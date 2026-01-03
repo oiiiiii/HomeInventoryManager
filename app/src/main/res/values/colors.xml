@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 新增：缺失的颜色资源 -->
+    <color name="colorPrimary">#3F51B5</color> <!-- 深蓝色（默认主题色） -->
+    <color name="teal_200">#009688</color> <!-- 青绿色（按钮背景色） -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. 兼容外部存储根目录（适配原有配置，兼容旧路径） -->
+    <external-path
+        name="external_files"
+        path="." />
+
+    <!-- 2. 兼容应用私有外部存储目录（优先使用，无需额外权限，与ImageUtils一致） -->
+    <external-files-path
+        name="external_files_path"
+        path="Pictures/HomeInventory/Photos/" />
+
+    <!-- 3. 兼容应用内部存储目录（外部存储不可用时兜底） -->
+    <files-path
+        name="internal_files"
+        path="HomeInventory/Photos/" />
+
+    <!-- 4. 兼容应用缓存目录（最终兜底，确保文件可访问） -->
+    <cache-path
+        name="cache_files"
+        path="HomeInventory/Photos/" />
+</paths>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.homeinventorymanager"> <!-- 请根据你的实际项目包名修改 -->
+
+    <!-- 振动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
+    <!-- 新增：相机权限（拍摄照片必需） -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 声明应用使用相机功能（可选，提升兼容性） -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <!-- 外部存储权限：适配Android 10及以上版本 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Android 10 (API 29) 及以上无需WRITE_EXTERNAL_STORAGE，通过该属性适配存储访问 -->
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HomeInventoryManager">
+        <!-- 新增：FileProvider配置（适配7.0+相机拍摄） -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <!-- 物品编辑页面 -->
+        <activity
+            android:name=".ItemEditActivity"
+            android:exported="false" />
+
+        <!-- 物品查询页面 -->
+        <activity
+            android:name=".QueryItemActivity"
+            android:exported="false" />
+
+        <!-- 设置页面 -->
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+
+        <!-- 主页面（应用入口） -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

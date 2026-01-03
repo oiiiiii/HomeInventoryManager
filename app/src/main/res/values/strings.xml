@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HomeInventoryManager</string>
+    <string name="title_add">物品录入</string>
+    <string name="title_query">物品查询</string>
+    <string name="title_modify">物品修改</string>
+    <string name="title_setting">设置</string>
+    <!-- 新增：Spinner 提示文字 -->
+    <string name="prompt_category">请选择分类</string>
+    <!-- 新增父分类提示字符串 -->
+    <string name="prompt_parent_category">选择父分类</string>
+    <string name="prompt_sub_category">请选择子分类</string>
+    <string name="prompt_location">请选择存放位置</string>
+</resources>
