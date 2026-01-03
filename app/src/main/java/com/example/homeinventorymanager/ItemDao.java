@@ -12,7 +12,7 @@ import java.util.List;
 public interface ItemDao {
     // 原有方法全部保留，无需修改（Insert/Update会自动适配新增的imagePath字段）
     @Insert
-    void insertItem(Item item);
+    long insertItem(Item item);
 
     @Query("SELECT * FROM item ORDER BY id DESC")
     List<Item> queryAllItems();

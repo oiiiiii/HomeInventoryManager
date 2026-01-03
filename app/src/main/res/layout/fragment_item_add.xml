@@ -133,7 +133,7 @@
             android:maxLines="5"
             android:layout_marginBottom="12dp" />
 
-        <!-- ========== 新增：物品图片预览区域（修复语法错误） ========== -->
+        <!-- ========== 新增：图片预览容器（解决 llImageContainer 找不到问题） ========== -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,9 +142,19 @@
             android:textColor="@android:color/black"
             android:layout_marginBottom="4dp" />
 
-        <!-- 修复：移除行内注释，规范属性书写，正确闭合标签 -->
+        <!-- 多图预览容器：id 为 llImageContainer，与代码对应 -->
+        <LinearLayout
+            android:id="@+id/llImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:padding="4dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- 单张图片预览（你原有布局） -->
         <ImageView
-            android:id="@+id/iv_item_preview"
+            android:id="@+id/imageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
@@ -153,9 +163,9 @@
             android:background="#f5f5f5"
             android:layout_marginBottom="8dp" />
 
-        <!-- 添加图片按钮（多图） -->
+        <!-- 添加图片按钮（多图）：id 为 btnAddPhoto，与代码对应 -->
         <Button
-            android:id="@+id/btn_add_photos"
+            android:id="@+id/btnAddPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="添加物品照片（可多张）"

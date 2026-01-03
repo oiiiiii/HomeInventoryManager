@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "item") // 与你的表名保持一致
 public class Item {
     @PrimaryKey(autoGenerate = true)
-    private int id; // 自增主键
+    private long id; // 自增主键
     private String itemName; // 物品名称
     private String category; // 分类
     private String subCategory; // 子分类
@@ -54,11 +54,11 @@ public class Item {
     }
 
     // 你的原有字段 getter/setter 方法（保留不变，完整保留）
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

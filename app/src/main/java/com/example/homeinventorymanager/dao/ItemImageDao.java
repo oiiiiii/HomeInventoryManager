@@ -18,8 +18,9 @@ public interface ItemImageDao {
      * @param itemId 物品ID
      * @return 图片路径列表
      */
-    @Query("SELECT imagePath FROM item_image WHERE itemId = :itemId")
-    List<String> queryImagePathsByItemId(int itemId);
+    // 核心修正：查询语句中使用数据库实际列名 `image_path`，而非 `imagePath`
+    @Query("SELECT image_path FROM item_image WHERE item_id = :itemId")
+    List<String> queryImagePathsByItemId(long itemId);
 
     /**
      * 插入单张物品图片关联记录
@@ -39,6 +40,6 @@ public interface ItemImageDao {
      * 根据物品ID删除所有关联的图片记录
      * @param itemId 物品ID
      */
-    @Query("DELETE FROM item_image WHERE itemId = :itemId")
+    @Query("DELETE FROM item_image WHERE item_id = :itemId")
     void deleteItemImageByItemId(int itemId);
 }
